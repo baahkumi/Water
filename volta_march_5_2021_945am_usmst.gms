@@ -114,7 +114,7 @@ $Offtext
 *Section 1. Sets
 Sets
 **********************************************************************************************************
-i     Flows -- location of important nodes in Volta Basin - Mali-Burkina-Benin-Togo-Côte d'Ivoire to Ghana
+i     Flows -- location of important nodes in Volta Basin - Mali-Burkina-Benin-Togo-Cote d'Ivoire to Ghana
 **********************************************************************************************************
 /   BVSame_h_f           Headwater and tributary flow nodes            inflow(i)
     Sorou_h_f
@@ -557,7 +557,7 @@ ag(i)                All major agriculture nodes                           ag(i)
       TYaruAg_f          Tiegu-Yarugu irrigation in Ghana
       VeaAg_f            Vea Irrigation Scheme in Ghana
       TonoAg_f           Tono Irrigation Scheme in Ghana
-      NZzanAg_f          Nord-Zanzan Irrigation Scheme in Côte d'Ivoire
+      NZzanAg_f          Nord-Zanzan Irrigation Scheme in Cote d'Ivoire
       BuiAg_f            Bui Irrigation Scheme in Ghana
       PwaluAg_f          Pwaulugu irrigation in Ghana
       SabariAg_f         Sabari Irrigation Scheme in Ghana
@@ -596,7 +596,7 @@ ur(i)                All major urban water supply nodes                    ur(i)
      BagrUr_f            Bagre Urban water use in Burkina Faso
      BolgaUr_f           Bolgatanga Urban water supply in Ghana
      WaUr_f              Wa Urban water supply  in Ghana
-     BounaUr_f           Bouna urban water supply in Côte d'Ivoire
+     BounaUr_f           Bouna urban water supply in Cote d'Ivoire
      YendiUr_f           Yendi water withdrawal form daka river in Ghana
      SavelUr_f           Savelugu doemstic water supply in Ghana
      TamaleUr_f          Tamale Urban water supply in Ghana
@@ -692,7 +692,7 @@ agdivert(divert)      Diversion nodes per agricultural use           agdivert(i)
     TYaruAg_d_f         Tiegu-Yarugu irrigation in Ghana
     VeaAg_d_f           Vea Irrigation in Ghana
     TonoAg_d_f          Tono Irrigation in Ghana
-    NZzanAg_d_f         Nod-Zanzan Irrigation in Côte d'Ivoire
+    NZzanAg_d_f         Nod-Zanzan Irrigation in Cote d'Ivoire
     BuiAg_d_f           Bui Irrigation Scheme in Ghana
     PwaluAg_d_f         Pwalugu irrigation in Ghana
     SabariAg_d_f        Sabari Irrigation in Ghana
@@ -732,7 +732,7 @@ urdivert (divert)      Diversion nodes per urban use                 urdivert(i)
     BagrUr_d_f          Bagre urban water use in Burkina Faso
     BolgaUr_d_f         Bolgatanga Urban water supply in Ghana
     WaUr_d_f            Wa Urban water supply in Ghana
-    BounaUr_d_f         Bouna urban water diversion in Côte d'Ivoire
+    BounaUr_d_f         Bouna urban water diversion in Cote d'Ivoire
     SavelUr_d_f         Savelugu domestic water supply in Ghana
     TamaleUr_d_f        Tamale Urban water supply in Ghana
     YendiUr_d_f         Yendi domestic water withdrawal in Ghana
@@ -1016,7 +1016,7 @@ umloss(i)             Unmeasured losses flow nodes                     umloss(i)
     BFaso_uml_f           Unmeasured losses in Burkina Faso
     Benin_uml_f           Unmeasured losses in Benin
     Togo_uml_f            Unmeasured losses in Togo
-    CIvoire_uml_f         Unmeasured losses in Côte d'Ivoire
+    CIvoire_uml_f         Unmeasured losses in Cote d'Ivoire
     Ghana_uml_f           Unmeasured losses in Ghana
 /
 
@@ -3879,7 +3879,7 @@ RecBen_r_d_e (     t,k,r,ss,mm,pp)              .. RecBen_r_d_v(     t,k,r,ss,mm
 *Hydroelectricity power  Economic Benefits  depend on the storage volume (stock) of each reservoir and hydro turbine releases
 *---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 *                                                                  Million (m3/year) =0.0316887646 m3/s    * Hydro releases/year seadist_h(res,k)  *(discharge-Mm3/year)                  *power production dummy
-*                                                                            power (W per year)=(converts from Wh to GWh )*(head in meters) *(converts discharge from Mm3/y to m3/s)*(density of water-kg/m3-997 kg/m³)*gravitational constatnt*efficiency*from GW to GWh per season
+*                                                                            power (W per year)=(converts from Wh to GWh )*(head in meters) *(converts discharge from Mm3/y to m3/s)*(density of water-kg/m3-997 kg/mÂ³)*gravitational constatnt*efficiency*from GW to GWh per season
 HPower_prod_e  (res,hydro,t,k,  ss,mm,pp) $(bh(res,hydro)).. Power_prod_v(res,hydro,t,k,ss,mm,pp)=e= (0.000000001)*reservoirs_h_v(res, t,k,ss,mm,pp)*(0.0316887646* X_v(hydro,t,k,ss,mm,pp))   *997  *power_p(res,mm)            *9.807              *teff_p(res,mm)*8760;
 *If we want to know the electricity generation then we multiple KW by the number of specific period of time (hours, month) to get generation.
 
@@ -4771,7 +4771,7 @@ Tot_Ben_r_p            (r,          s,m,p) = Tot_Ben_r_v.l       (r,            
 
 
 *--------------------------------------------------------------------------------------------------------------------------------------------------*
-* Next we use GAMS' GDX facility to write to an excel spreadsheet  import_p Tot_Ben_r_p
+* Next we use GAMS' GDX facility to write to an excel spreadsheet  
 
 execute_unload "Volta_Basin_Optimization_Model.gdx"
 
@@ -4857,7 +4857,6 @@ par = TotalEner_Ben_p         rng = opt_total_enerben!c4           Cdim = 0
 par = TotalRec_Ben_p          rng = opt_total_recBen!c4            Cdim = 0
 par = TotalFDamages_p         rng = opt_total_fld_dmges!c4         Cdim = 0
 
-*par =  Tot_Ben_r_p            rng = opt_total_r!c4                 Cdim = 0
 
 * model checks
 par = check_wat_stock_p       rng =zzz_check_water_stocks!c5       Cdim = 0
